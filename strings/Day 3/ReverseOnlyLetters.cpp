@@ -25,7 +25,7 @@ Output: "Qedo1ct-eeLg=ntse-T!"
 
 using namespace std;
 
-
+// Just Pointers.
 string ReverseOnlyLetters (string S) {
     string result = S;
     int i = S.size() - 1, j = 0;
@@ -39,6 +39,30 @@ string ReverseOnlyLetters (string S) {
             i--;
         }
         else {
+            j++;
+        }
+    }
+    return result;
+}
+
+// Using Stacks.
+string ReverseOnlyLetters2 (string S) {
+    stack<char> popper{};
+    for (char i : S) {
+        if (isalpha(i)) {
+            popper.push(i);
+        }
+    }
+    string result;
+    int j = 0;
+    while (j < S.size()) {
+        if (isalpha(S[j])) {
+            result.push_back(popper.top());
+            popper.pop();
+            j++;
+        }
+        else {
+            result.push_back(S[j]);
             j++;
         }
     }
