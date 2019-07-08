@@ -8,7 +8,7 @@ using namespace std;
 string ReverseOnlyLetters (string S) {
     string result = S;
     int i = S.size() - 1, j = 0;
-    while (i >= 0 && j <= S.size()) {
+    while (i >= 0 && j < S.size()) {
         if (isalpha(S[i]) && isalpha(S[j])) {
             result[j] = S[i];
             j++;
