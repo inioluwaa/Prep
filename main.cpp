@@ -1,34 +1,28 @@
 #include <iostream>
 #include <string>
-#include <stack>
 
 using namespace std;
 
-// Using Stacks
-string ReverseOnlyLetters (string S) {
-    stack<char> popper{};
-    for (char i : S) {
-        if (isalpha(i)) {
-            popper.push(i);
-        }
-    }
+string NextNumber (string s) {
     string result;
-    int j = 0;
-    while (j < S.size()) {
-        if (isalpha(S[j])) {
-            result.push_back(popper.top());
-            popper.pop();
-            j++;
+    for (int i(0); i < s.size(); ++i) {
+        int count = 1;
+        while (i + 1 < s.size() && s[i] == s[i + 1]) {
+            ++i, ++count;
         }
-        else {
-            result.push_back(S[j]);
-            j++;
-        }
+        result += to_string(count) + s[i];
     }
     return result;
 }
 
+string CountAndSay (int n) {
+    string s = "1";
+    for (int i(1); i < n; ++i) {
+        s = NextNumber(s);
+    }
+    return s;
+}
+
 int main() {
-    string S = "Test1ng-Leet=code-Q!";
-    cout << ReverseOnlyLetters(S);
+    cout << CountAndSay(4);
 }
