@@ -1,33 +1,8 @@
-#include <iostream>
-#include <string>
-#include <vector>
+/*
+Given a soted list of integers, square the element and the given output in sorted order.
 
-using namespace std;
-
-/*string PressAForCapslock (string s) {
-    string result;
-    bool caps = false;
-    for (int i(0); i < s.size(); ++i) {
-        if (s[i] == 'a' || s[i] == 'A') {
-            caps = !caps;
-            i++;
-        }
-        if (caps) {
-            s[i] = toupper(s[i]);
-        }
-        else {
-            s[i] = tolower(s[i]);
-        }
-    }
-    return s;
-}*/
-
-int FindPartition (vector<int> arr) {
-    for (int i(0); i < arr.size(); ++i) {
-        if (arr[i] >= 0) return i;
-    }
-    return -1;
-}
+For example, given [-9, -2, 0, 2, 3], return [0, 4, 4, 9, 81]
+*/
 
 vector<int> SquareSortedMatrix (vector<int> &arr) {
     vector<int> result(arr.size());
@@ -62,8 +37,6 @@ vector<int> SquareSortedMatrix (vector<int> &arr) {
 }
 
 int main() {
-    /*string s = "My keyboard is broaken";
-    cout << PressAForCapslock(s);*/
     vector<int> T = {-9, -2, 0, 2, 3};
     vector<int> P = SquareSortedMatrix(T);
     for (auto i : P)
