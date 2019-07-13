@@ -7,11 +7,9 @@
 #IncludeRegexTransform: 
 
 C:/Users/Inioluwa/CLionProjects/prep/main.cpp
-algorithm
--
 iostream
 -
-climits
+string
 -
 vector
 -
